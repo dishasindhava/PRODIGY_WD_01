@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7ff;
+            color: #222;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            transition: 0.4s;
+            z-index: 1000;
+        }
+
+        nav.scrolled {
+            background: #142b70;
+            padding: 15px 8%;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd166;
+            border-bottom: 2px solid #ffd166;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Home Section */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+            background: linear-gradient(135deg, #142b70, #168bd2);
+        }
+
+        .home h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .home p {
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 30px;
+            background: #ffd166;
+            color: #142b70;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        /* Common Sections */
+        section:not(.home) {
+            padding: 90px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 35px;
+            color: #142b70;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .services {
+            background: #e9f1ff;
+        }
+
+        .service-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #168bd2;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #142b70;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #142b70;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .home h1 {
+                font-size: 36px;
+            }
+
+            .home p {
+                font-size: 16px;
+            }
+
+            section:not(.home) {
+                padding: 65px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">D's Website</div>
+
+        <button class="menu-btn" id="menuBtn"
+                aria-label="Toggle navigation">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home -->
+    <section class="home" id="home">
+        <h1>Welcome to D's Website</h1>
+        <p>Creative Ideas. Modern Design. Better Experience.</p>
+        <a href="#about" class="btn">Explore More</a>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            Welcome to our website. We create simple, creative
+            and modern digital experiences. Our goal is to
+            provide visitors with a smooth browsing experience.
+        </p>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+
+        <div class="service-box">
+            <div class="card">
+                <h3>Web Design</h3>
+                <p>Beautiful and modern website designs.</p>
+            </div>
+
+            <div class="card">
+                <h3>Development</h3>
+                <p>Responsive and user-friendly websites.</p>
+            </div>
+
+            <div class="card">
+                <h3>Creative Ideas</h3>
+                <p>Creative solutions for digital projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: dswebsite@gmail.com</p>
+        <p>Thank you for visiting our website!</p>
+    </section>
+
+    <footer>
+        <p>© 2026 D'sWebsite. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const navbar = document.getElementById("navbar");
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        // Change navbar when scrolling
+        window.addEventListener("scroll", function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+
+        // Mobile menu toggle
+        menuBtn.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+        });
+
+        // Close menu after clicking a link
+        document.querySelectorAll(".nav-links a").forEach(function(link) {
+            link.addEventListener("click", function() {
+                navLinks.classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+</html>
